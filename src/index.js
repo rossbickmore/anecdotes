@@ -3,22 +3,25 @@ import ReactDOM from 'react-dom'
 
 const Button = (props) => {
     return (
-        <div>
         <button onClick={props.onClick}>
             {props.text}
         </button>
-        </div>
     )
 }
 
 
+
 const App = (props) => {
   const [selected, setSelected] = useState(0)
-  const randomNumber = () => Math.round(Math.random()*6)
+  const randomNumber = () => Math.round(Math.random()*5)
+
+
   return (
     <div>
         {props.anecdotes[selected]}
+        <div>
         <Button onClick={() => setSelected(randomNumber())} text="next anecdote" />
+        </div>
     </div>
   )
 }
